@@ -1,7 +1,15 @@
-import Image from 'next/image'
+import Results from "@/components/Results";
+import Search from "@/components/Search";
 
 export default function Home() {
   return (
-    <h1>Hello cat</h1>
+    <>
+
+      <div className="container">
+        <h1>The Saurus</h1>
+        <Search />
+        <Results />
+      </div>
+    </>
 )
 }
