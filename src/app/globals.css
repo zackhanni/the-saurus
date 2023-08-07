@@ -81,16 +81,16 @@ form button:hover {
   padding: 1rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .results li {
   display: block;
-
   background-color: var(--accent);
   border-radius: 1rem;
-  padding: .5rem;
-  margin-bottom: .5rem;
+  padding: 1rem;
+  margin-bottom: .25rem;
+
 
 }
 
