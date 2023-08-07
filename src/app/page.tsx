@@ -6,7 +6,7 @@ export default function Home() {
     <>
 
       <div className="container">
-        <h1>The Saurus</h1>
+        <h1>THE-saurus</h1>
         <Search />
         <Results />
       </div>
