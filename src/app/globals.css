@@ -1,79 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --primary: #A2983F;
+  --primary: #a2983f;
   --secondary: #c4c8e8;
   --accent: #77702e;
   --background: #e2e3f4;
   --text: #e2e3f4;
 }
 
-
 * {
   box-sizing: border-box;
   margin: 0;
- 
 }
 
 body {
   background-image: url("../../public/dino-background.jpg");
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
 }
 
-body h1 {
-  font-size: 3rem;
-  font-weight: 300;
-  margin-top: 1rem;
-}
-
 .container {
-  text-align: center;
-  max-width: 80%;
-  min-height: 60%;
   background-color: var(--primary);
   color: var(--text);
-  border-radius: 10px;
-}
-
-form {
-  padding: 2rem 1rem;
-  max-width: 800px;
 }
 
 form input {
-  font-size: 1.25rem;
-  border-radius: 1rem;
-  padding: 1rem;
   background-color: var(--accent);
   color: var(--text);
-  border: none;
-  margin-right: 1rem;
 }
 
 ::placeholder {
   color: var(--text);
 }
 
-/* form input::placeholder {
-  color: var();
-} */
-
 form button {
-  font-size: 1.25rem;
   color: var(--text);
   background-color: var(--primary);
-  /* appearance: none; */
   border: 2px solid var(--accent);
-  padding: 1rem 1rem;
-  border-radius: 1rem;
-  /* border: none; */
-  /* outline: none; */
-  /* background: none; */
-  transition: .3s;
 }
 
 form button:hover {
@@ -81,20 +46,6 @@ form button:hover {
   border: 2px solid var(--primary);
 }
 
-.results {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  font-size: 1.25rem;
-}
-
-.results li {
-  display: block;
+li {
   background-color: var(--accent);
-  border-radius: 1rem;
-  padding: 1rem;
-  margin-bottom: .25rem;
-
-
 }
-
