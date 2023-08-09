@@ -33,19 +33,19 @@ export default function Home() {
 
   return (
     <div className="container rounded-lg text-center max-w-lg bg-gradient-to-r">
-      <h1 className="text-5xl p-4">THE-saurus</h1>
+      <h1 className="text-5xl pt-4">THE-saurus</h1>
       <form className="p-4" onSubmit={handleSubmit}>
         <input
-          className="text-xl p-4 rounded-2xl mr-4"
+          className="text-xl p-4 rounded-2xl"
           type="text"
           placeholder="Search a word..."
           onChange={(event) => setWord(event.target.value)}
           onKeyUp={findThesaurus}
           value={word}
         />
-        <button className="text-xl rounded-2xl m-4 p-4 duration-300">
+        {/* <button className="text-xl rounded-2xl m-4 p-4 duration-300">
           Roar!
-        </button>
+        </button> */}
       </form>
 
       <div className="text-xl p-4">
