@@ -16,9 +16,11 @@ export default function Home() {
     if (event.key === "Enter") {
       try {
         const response = await axios.get(url);
-        const syns: string[] = response.data[0]?.meta?.syns[0] || [];
+        const data = response.data[0];
+        const meta = data?.meta
+        const syns: string[] = meta?.syns[0] || [];
         setSynonyms(syns);
-        
+
       } catch (error) {
         console.error("Error fetching synonyms:", error);
       }
@@ -30,7 +32,7 @@ export default function Home() {
     <div className="container">
       <h1>THE-saurus</h1>
       <form>
-          <input 
+          <input
               type="text"
               placeholder="Search a word..."
               onChange={(event) => setWord(event.target.value)}
