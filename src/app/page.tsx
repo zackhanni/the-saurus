@@ -3,6 +3,10 @@
 import React, {useState} from "react";
 import axios from "axios";
 
+// stop page from reloading when submitting the form
+const handleSubmit = (event) => {
+  event.preventDefault();
+}
 
 export default function Home() {
 
@@ -14,11 +18,11 @@ export default function Home() {
 
   const findThesaurus = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
+      const url = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${API_KEY}`;
+
       try {
         const response = await axios.get(url);
-        const data = response.data[0];
-        const meta = data?.meta
-        const syns: string[] = meta?.syns[0] || [];
+        const syns = response.data[0]?.meta?.syns.flat() || [];
         setSynonyms(syns);
 
       } catch (error) {
@@ -27,12 +31,11 @@ export default function Home() {
     }
   }
 
-
   return (
     <div className="container">
       <h1>THE-saurus</h1>
-      <form>
-          <input
+      <form onSubmit={handleSubmit}>
+          <input 
               type="text"
               placeholder="Search a word..."
               onChange={(event) => setWord(event.target.value)}
@@ -45,15 +48,11 @@ export default function Home() {
 
       <div className="results">
           <ul>
-            <li>test1</li>
 
-            {/* {synonyms.map((synonym, index) => (
+            {synonyms.slice(0, 8).map((synonym, index) => (
             <li key={index}>{synonym}</li>
-            ))} */}
+            ))}
             
-            {/* {synonyms.meta ? <li>{synonyms.meta.syns[0]}</li> : null} */}
-
-
           </ul>
       </div>
     </div>
