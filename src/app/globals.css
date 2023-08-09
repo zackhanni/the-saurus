@@ -14,7 +14,7 @@
 }
 
 body {
-  background-image: url("../app/dino-background.jpg");
+  background-image: url("../../public/dino-background.jpg");
   padding: 0;
   margin: 0;
   display: flex;
@@ -52,6 +52,10 @@ form input {
   color: var(--text);
   border: none;
   margin-right: 1rem;
+}
+
+::placeholder {
+  color: var(--text);
 }
 
 /* form input::placeholder {
